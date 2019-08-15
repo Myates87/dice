@@ -1,0 +1,180 @@
+<!DOCTYPE = html>
+
+<html>
+<head>
+
+</head>
+
+<style>
+
+.body-prop{
+  padding: 0;
+  margin: 0;
+}
+
+.button-box{
+  width: 100%;
+  background-color: #555;
+  padding: 8px 0 8px 0 ;
+  margin: 0;
+}
+
+.roll-button{
+  color: #fff;
+  border: none;
+  background-color: #47d;
+  padding: 4px;
+  border-radius: 2px;
+  margin: 2px;
+}
+
+.roll-button:hover{
+  color: #fff;
+  border: none;
+  background-color: #69f;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.clear-button{
+  color: #fff;
+  border: none;
+  background-color: #d31;
+  padding: 4px;
+  border-radius: 2px;
+  border-radius: 2px;
+  margin: 2px;
+}
+
+.clear-button:hover{
+  color: #fff;
+  border: none;
+  background-color: #f53;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+</style>
+
+<body class="body-prop">
+
+
+<div class="button-box">
+
+<button class="roll-button" onclick="getRandomNum()">Roll the dice</button>
+<button class="clear-button" onclick="clearNum()">Clear Dice</button>
+</div>
+<hr>
+
+
+<img id="numberOne" style="width: 20%;">
+<img id="numberTwo" style="width: 20%;">
+
+<h1 id="notification"></h1>
+
+<script>
+
+var randomNumberOne;
+var randomNumberTwo;
+
+
+
+function getRandomNum(){
+
+/*
+var dOne = "dOne.jpg";
+var dTwo = "dTwo.jpg";
+var dThree = "dThree.jpg";
+var dFour = "dFour.jpg";
+var dFive = "dFive.jpg";
+var dSix = "dSix.jpg";
+*/
+
+
+var randomNumberOne = Math.floor(Math.random() * Math.floor(6)) + 1;
+var randomNumberTwo = Math.floor(Math.random() * Math.floor(6)) + 1;
+
+document.getElementById('numberOne').innerHTML = randomNumberOne;
+document.getElementById('numberTwo').innerHTML = randomNumberTwo;
+
+  document.getElementById('numberOne').style.display = 'inline';
+  document.getElementById('numberTwo').style.display = 'inline';
+  document.getElementById('notification').style.display = 'block';
+
+//DICE ONE CODE BELOW
+
+if(randomNumberOne == 1){
+  document.getElementById('numberOne').src = "dOne.jpg";
+}
+
+if(randomNumberOne == 2){
+  document.getElementById('numberOne').src = "dTwo.jpg";
+}
+
+if(randomNumberOne == 3){
+  document.getElementById('numberOne').src = "dThree.jpg";
+}
+
+if(randomNumberOne == 4){
+  document.getElementById('numberOne').src = "dFour.jpg";
+}
+
+if(randomNumberOne == 5){
+  document.getElementById('numberOne').src = "dFive.jpg";
+}
+
+if(randomNumberOne == 6){
+  document.getElementById('numberOne').src = "dSix.jpg";
+}
+
+
+
+
+// DICE TWO CODE BELOW
+
+if(randomNumberTwo == 1){
+  document.getElementById('numberTwo').src = "dOne.jpg";
+}
+
+if(randomNumberTwo == 2){
+  document.getElementById('numberTwo').src = "dTwo.jpg";
+}
+
+if(randomNumberTwo == 3){
+  document.getElementById('numberTwo').src = "dThree.jpg";
+}
+
+if(randomNumberTwo == 4){
+  document.getElementById('numberTwo').src = "dFour.jpg";
+}
+
+if(randomNumberTwo == 5){
+  document.getElementById('numberTwo').src = "dFive.jpg";
+}
+
+if(randomNumberTwo == 6){
+  document.getElementById('numberTwo').src = "dSix.jpg";
+}
+
+
+if(randomNumberOne == 1 && randomNumberTwo == 1){
+  document.getElementById('notification').innerHTML = 'Snake Eyes!';
+  document.getElementById('notification').style.color = "red";
+} else {
+  document.getElementById('notification').innerHTML = randomNumberOne + randomNumberTwo;
+  document.getElementById('notification').style.color = "#333";
+}
+
+}
+
+function clearNum(){
+  document.getElementById('numberOne').style.display = 'none';
+  document.getElementById('numberTwo').style.display = 'none';
+  document.getElementById('notification').style.display = 'none';
+}
+
+</script>
+
+</body>
+
+</html>
